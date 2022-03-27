@@ -10,5 +10,28 @@
 {% endblock %}
 
 {% block content %}
-{#    tutaj lista potrzeb #}
+<table class="table table-striped"}>
+        <thead>
+        <tr>
+            <th>Nazwa</th>
+            <th>Opis </th>
+            <th>Ilość</th>
+            <th>Data dostarczenia</th>
+            <th>Kategoria</th>
+            <th>Użytkownik</th>
+        </tr>
+        </thead>
+        <tbody>
+        {%  for need in current_needs %}
+                <tr>
+                <td> {{ need.name }} </td>
+                <td> {{ need.description }} </td>
+                <td> {{ need.amount }}</td>
+                <td> {{ need.date }}</td>
+                <td>{{ need.category}} </td>
+                <td> {{ need.user }}</td>
+        {% endfor %}
+
+    </tbody>
+   </table>
 {% endblock %}
