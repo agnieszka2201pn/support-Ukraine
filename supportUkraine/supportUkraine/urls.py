@@ -19,5 +19,6 @@ from podziel_się import views as my_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('mainview/', my_views.MainView.as_view(), name = 'main_view')
+    path('mainview/', my_views.MainView.as_view(), name = 'main_view'),
+    path('registerview/', my_views.RegisterView.as_view(), name = 'register_view')
 ]
