@@ -17,12 +17,12 @@ class RegisterView(View):
     def get(self, request):
         if request.method == 'GET':
             register_form = UserForm
-            return render(request, 'podziel_się/register.html', {'form': register_form })
+            return render(request, 'podziel_się/register.html', {'form': register_form})
 
     def post(self, request):
         if request.method == "POST" and 'register' in request.POST:
             form = UserForm(request.POST)
-            if form.is_valid() :
+            if form.is_valid():
                 new_user = User.objects.create_user(username=form.cleaned_data['username'])
 
                 new_user.set_password(form.cleaned_data['password'])
